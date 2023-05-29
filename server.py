@@ -11,7 +11,7 @@ collection=db['todos']
 @app.route("/")
 def home():
     todos_lst=collection.find()
-    return render_template("index.html",todos_lst=todos_lst)
+    return render_template("todos.html",todos_lst=todos_lst)
 
 @app.route("/add",methods=['POST','GET'])
 def add():

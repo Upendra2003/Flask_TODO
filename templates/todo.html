@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block content %}
+<!-- <link rel="stylesheet" href="../static/style.css"> -->
+<form action="{{url_for('add')}}" method="POST">
+    <input class="input_field" type="text" name="task">
+    <button class="btn">Add Todo</button>
+</form>
+{% block todos %}{% endblock %}
+{% endblock %}

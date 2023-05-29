@@ -11,19 +11,7 @@
     <div class="container">
         <h1 class="title">Flask TODO App</h1>
         <div class="line"></div>
-        <form action="{{url_for('add')}}" method="POST">
-            <input class="input_field" type="text" name="task">
-            <button class="btn">Add Todo</button>
-        </form>
-        <div class="todos">
-            {% for todo in todos_lst %}
-                <div class="box">
-                    <p class="todo" >{{todo.task}}</p>
-                    <button class="btn"><a href='/update/{{todo._id}}'>Update</a></button>
-                    <button class="btn"><a href="/delete/{{todo._id}}">Delete</a></button>
-                </div>
-            {% endfor %}
-        </div>
+        {% block content %}{% endblock %}
+        {% block update %}{% endblock %}
     </div>
-</body>
 </html>

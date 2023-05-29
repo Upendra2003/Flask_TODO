@@ -1,0 +1,15 @@
+{% extends "todo.html" %}
+{% block todos %}
+
+<link rel="stylesheet" href="../static/style.css">
+<div class="todos">
+    {% for todo in todos_lst %}
+        <div class="box">
+            <p class="todo" >{{todo.task}}</p>
+            <button class="btn"><a href='/update/{{todo._id}}'>Update</a></button>
+            <button class="btn"><a href="/delete/{{todo._id}}">Delete</a></button>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
